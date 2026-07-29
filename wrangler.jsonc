@@ -1,0 +1,32 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ano-hon-fuda",
+  "main": "src/worker.tsx",
+  "compatibility_date": "2026-07-27",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "ano-hon-fuda.yhay81.com",
+      "custom_domain": true,
+    },
+  ],
+  "triggers": {
+    "crons": ["59 18 * * *"],
+  },
+  "observability": {
+    "enabled": true,
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ano-hon-fuda",
+      "database_id": "5d08d37e-bebf-4204-9762-fe5fb5b9917f",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+  },
+}
